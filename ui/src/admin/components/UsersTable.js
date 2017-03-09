@@ -14,10 +14,14 @@ const UsersTable = ({users}) => (
         <tbody>
           {
             users.length ? users.map((user) => (
-              <tr key={user.name}>
+              <tr key={user.name} className="hidden-buttons">
                 <td>{user.name}</td>
                 <td>{user.roles && user.roles.map((r) => r.name).join(', ')}</td>
                 <td>{user.permissions && user.permissions.map((p) => p.scope).join(', ')}</td>
+                <td>
+                  <button type="button" className="btn btn-info">Change Password</button>
+                  <button type="button" className="btn btn-info">Delete</button>
+                </td>
               </tr>
             )) : (() => (
               <tr className="table-empty-state">

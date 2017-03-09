@@ -120,3 +120,17 @@ table .monotype {
     @include custom-scrollbar($g5-pepper, $c-pool);
   }
 }
+
+/*
+    Make buttons disappear when not hovering
+    _____________________________________________
+*/
+tr.hidden-buttons {
+  td button {
+    visibility: hidden;
+  }
+
+  &:hover td button {
+    visibility: visible;
+  }
+}
